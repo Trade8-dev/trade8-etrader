@@ -1,0 +1,38 @@
+{
+  "//": "Sentin8:App store listing manifest for eTrader. This file is the literal request body for POST /v1/app/store/listings (snake_case keys). Re-seed via `make seed` (db seed-listings). Keep in sync with the eTrader app's BFF client scopes.",
+
+  "app_name": "Trade8:eTrader",
+  "app_slug": "trade8-etrader",
+  "description": "Professional trading desk: order entry, blotter, depth ladder, tape, P&L, alerts, and overnight operations over the Trade8 vertical.",
+  "backend_url": "http://localhost:8099",
+  "supports_dcr": true,
+  "visibility": "public",
+  "status": "published",
+
+  "oauth_defaults": {
+    "grant_types": ["authorization_code", "refresh_token"],
+    "response_types": ["code"],
+    "token_endpoint_auth_method": "none",
+    "scopes": [
+      "openid", "profile", "email",
+      "trade8:desk:order:read", "trade8:desk:order:write",
+      "trade8:desk:order:cancel", "trade8:desk:order:flatten",
+      "trade8:feed:quote:read", "trade8:feed:depth:read",
+      "trade8:feed:history:read",
+      "trade8:pnl:self:read", "trade8:pnl:office:read",
+      "trade8:report:eod:read"
+    ],
+    "redirect_uris": ["http://localhost:8099/callback"],
+    "post_logout_redirect_uris": ["http://localhost:8099/"]
+  },
+
+  "developer": {
+    "name": "Trade8 Product Engineering",
+    "support_email": "trade8-ops@sentin8.local"
+  },
+
+  "branding": {
+    "accent_color": "#D4AF37",
+    "tagline": "The desk, anywhere."
+  }
+}
