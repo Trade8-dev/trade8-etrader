@@ -1,4 +1,4 @@
-# BUSINESS.md: etrader — Trade8 Professional Trading App
+# etrader — Trade8 Professional Trading App
 
 > Audience: product owners and business stakeholders. For architecture
 > read `README.md`; for the platform app contract read
