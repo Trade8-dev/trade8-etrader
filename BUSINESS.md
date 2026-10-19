@@ -1,4 +1,4 @@
-# etrader — Trade8 Professional Trading App
+# etrader - Trade8 Professional Trading App
 
 > Audience: product owners and business stakeholders. For architecture
 > read `README.md`; for the platform app contract read
@@ -7,12 +7,12 @@
 ## 1. Business Purpose
 
 - Put the **entire trading desk in the trader's hands**: enter, manage, and
-  monitor orders; watch the market ladder and tape; track P&L — on one
+  monitor orders; watch the market ladder and tape; track P&L - on one
   keyboard-dense, sub-second surface.
 - Deliver it **safely on any device**: the app holds no credentials and can
   never move money without the server-side authorization plane.
-- Support the **muscle memory of professional traders** — F-key chains,
-  deterministic behavior, immediate feedback — and carry those preferences
+- Support the **muscle memory of professional traders** - F-key chains,
+  deterministic behavior, immediate feedback - and carry those preferences
   across devices.
 
 ## 2. Business Scope (What the App Provides)
@@ -23,7 +23,7 @@
 | Blotter | Working/terminal order views, cancel, per-order status |
 | Depth ladder | Live L2 ladder with sizes at each level |
 | Tape / watchlist | Live prints and quotes for watched symbols |
-| Charts | Candlesticks (client-drawn), intervals 1s–1D, MA/EMA/VWAP overlays |
+| Charts | Candlesticks (client-drawn), intervals 1s-1D, MA/EMA/VWAP overlays |
 | P&L board | Per-symbol and total day P&L, LFT giveback |
 | Alerts | Rule creation + fired-alert display with acknowledge |
 | Flatten sheet | Typed flatten strategy parameters + basket progress |
@@ -49,7 +49,7 @@
 | Entry | Idempotent submissions | A retried submit cannot duplicate an order |
 | Entry | Session awareness | Entry surfaces the session state (rejects outside open are explicit, not silent) |
 | Monitoring | Scope-correct blotter | Traders see their orders; managers see their office (per service scopes) |
-| Realtime | Truthful resync | On a data gap the app shows "resyncing" and refetches a snapshot — it never invents liquidity or prints |
+| Realtime | Truthful resync | On a data gap the app shows "resyncing" and refetches a snapshot - it never invents liquidity or prints |
 | P&L | Self-tier numbers | Traders see only their own P&L by default |
 | Alerts | Declarative + acknowledged | Rules are simple comparisons; fired alerts persist until acknowledged |
 | Flatten | Typed strategies | Flatten params are validated forms, not free text |
@@ -67,13 +67,13 @@ submissions/cancels) and *consumes* streams:
 
 ## 5. Business Rules & Invariants
 
-1. The app never bypasses the BFF — one transport, zero direct service
+1. The app never bypasses the BFF - one transport, zero direct service
    calls.
-2. No money formatting via floats — scaled integer input/output only.
+2. No money formatting via floats - scaled integer input/output only.
 3. Every destructive action (cancel, cancel all, flatten) is explicit and
    confirms in the UI, with the result journaled server-side.
 4. Scope-gated surfaces: a page a user cannot use is hidden, not erroring.
-5. Client order ids are generated once per intent — refresh loops are safe.
+5. Client order ids are generated once per intent - refresh loops are safe.
 
 ## 6. Target-User Roles & Use Cases
 
@@ -117,7 +117,7 @@ submissions/cancels) and *consumes* streams:
 
 - Should the ladder support click-to-trade pre-fill at launch?
 - Do managers need cross-trader flatten approval UX in v1?
-- Mobile-specific trading flows (touch order pad) — same surfaces or
+- Mobile-specific trading flows (touch order pad) - same surfaces or
   simplified?
 - Should the app show audit/keystroke history to traders (their own) or
   only to admins?

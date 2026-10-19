@@ -1,4 +1,4 @@
-# README.md: etrader — Trade8 Professional Trading App
+# README.md: etrader - Trade8 Professional Trading App
 
 > Audience: developers working on the app; product overview in
 > `BUSINESS.md`. App design: `design/sentin8-trade8-apps-technical-design.md`.
@@ -8,7 +8,7 @@
 etrader is the trade8 vertical's Flutter trader app (web/mobile/desktop),
 delivered through the Sentin8 App Store. It is a pure BFF client: every
 backend call routes through Sentin8:BFF (`/proxy/trade8/...`, SSE
-`/subscribe`, WS `/ws`) — it never calls a trade8 service directly and
+`/subscribe`, WS `/ws`) - it never calls a trade8 service directly and
 holds no tokens.
 
 ## 2. Motivation
@@ -36,18 +36,18 @@ graph TD
 
 ## 4. Key Traits and Data Structures
 
-- **`Bff8ApiClient`** (`bff/bff_client.dart`) — the injected transport
+- **`Bff8ApiClient`** (`bff/bff_client.dart`) - the injected transport
   (`Future<Map>` per call + `Stream<BffEvent>` per channel), DTOs
   (`OrderRow` with the `working` filter, `Quote` with ×10⁴ scaling),
   `BffError`, hot caches (orders/quotes/tape/pnl), and the
   `BffClientScope` InheritedWidget.
-- **`RealtimeStore`** (`bff/realtime_store.dart`) — per-topic sequence
+- **`RealtimeStore`** (`bff/realtime_store.dart`) - per-topic sequence
   tracking; a gap flips the store to `resyncing` (banner + snapshot
   refetch); a disconnected channel surfaces the banner.
-- **Shortcuts** (`bff/shortcuts.dart`) — the F-key trading chain (F1/F2
+- **Shortcuts** (`bff/shortcuts.dart`) - the F-key trading chain (F1/F2
   limit buy/sell, F3/F4 market, F5 cancel all, F6 flatten, F9 refresh, F10
   focus) synced bidirectionally with the trader's `tool_preferences`.
-- **Pages** (`pages/`) — `order_pad` (typeahead, tick-band steppers,
+- **Pages** (`pages/`) - `order_pad` (typeahead, tick-band steppers,
   idempotent client ids), `blotter` (working/terminal filters, cancel),
   `depth_ladder`, `tape`, `chart` (CustomPainter candles) +
   `chart_indicators` (MA/EMA/VWAP), `pnl`, `alerts`, `flatten_sheet` (typed
@@ -56,15 +56,15 @@ graph TD
 
 ## 5. Rationale, Trade-offs, and Alternatives
 
-- **Plain StatefulWidgets + InheritedWidget + Streams** — no external state
+- **Plain StatefulWidgets + InheritedWidget + Streams** - no external state
   package: the app is small, deterministic, and easily testable; the
   realtime layer is channel-shaped, matching the BFF transport.
-- **Transport injection** — the concrete authenticated transport comes from
+- **Transport injection** - the concrete authenticated transport comes from
   the platform's `sentin8_flutter` bootstrap; the app tests against a fake
   transport. Rejected: app-owned OAuth (token exposure, platform drift).
-- **CustomPainter candles** — zero-dependency charting with interval
+- **CustomPainter candles** - zero-dependency charting with interval
   derivation client-side (4h from 1h etc.).
-- **Server-synced shortcuts** — the trader's muscle memory follows their
+- **Server-synced shortcuts** - the trader's muscle memory follows their
   profile across devices.
 
 ## 6. Internal Implementation & Invariants (Private Design)
