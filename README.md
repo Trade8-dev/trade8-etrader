@@ -1,7 +1,12 @@
-# README.md: etrader - Trade8 Professional Trading App
+# etrader - Trade8 Professional Trading App
 
 > Audience: developers working on the app; product overview in
 > `BUSINESS.md`. App design: `design/sentin8-trade8-apps-technical-design.md`.
+
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](../../LICENSE)
+[![Built with Flutter](https://img.shields.io/badge/Built%20with-Flutter-blue.svg)](https://flutter.dev/)
+[![Docs](https://img.shields.io/badge/docs/read-3aa757.svg)](https://trade8.dev/docs/apps/etrader)
+[![Website](https://img.shields.io/badge/website-trade8.dev-1a73e8.svg)](https://trade8.dev)
 
 ## 1. Summary
 
