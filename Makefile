@@ -18,5 +18,5 @@ help: ## Show this help
 build test:
 	@echo "ERROR: trade8-etrader has lib/ code but no pubspec.yaml — scaffold it first (see a sibling app repo)" >&2; exit 1
 
-clean:
-	@echo "nothing to clean"
+clean: ## remove .run .run/logs .tmp (no build artifacts in this repo)
+	@rm -rf .run .run/logs .tmp
