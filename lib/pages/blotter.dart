@@ -82,7 +82,7 @@ class _BlotterPageState extends State<BlotterPage> {
  ),
  Expanded(
  child: _rows.isEmpty
- ? const Center(child: Text('No orders — submit from the ticket.'))
+ ? const Center(child: Text('No orders - submit from the ticket.'))
  : ListView.builder(
  itemCount: _rows.length,
  itemBuilder: (context, i) {

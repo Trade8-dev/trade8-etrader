@@ -98,14 +98,14 @@ class _FlattenSheetPageState extends State<FlattenSheetPage> {
  label: const Text('Flatten working orders'),
  ),
  const SizedBox(height: 24),
- Text('Basket (Func module progress — read-only)',
+ Text('Basket (Func module progress - read-only)',
  style: Theme.of(context).textTheme.titleMedium),
  const Padding(
  padding: EdgeInsets.only(top: 8),
  child: Text(
  'Basket executions stream their per-item progress from the '
  'trade8-basket-runner module events (trade8:desk:order:… inbox '
- 'trail); the editable submitter is the F1–F4 ticket + batch.',
+ 'trail); the editable submitter is the F1 - F4 ticket + batch.',
  ),
  ),
  ],

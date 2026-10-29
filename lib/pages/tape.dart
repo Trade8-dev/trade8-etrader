@@ -4,7 +4,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 // Tape / market board (A1.7): watchlist grid with last/BBO/Δ + prints.
-// Refresh-driven (SSE wiring lands with the bootstrap pass — A1.2).
+// Refresh-driven (SSE wiring lands with the bootstrap pass - A1.2).
 
 import 'package:flutter/material.dart';
 
@@ -52,7 +52,7 @@ class _TapePageState extends State<TapePage> {
  ),
  Expanded(
  child: _quotes.isEmpty
- ? const Center(child: Text('No prints yet — refresh the watchlist.'))
+ ? const Center(child: Text('No prints yet - refresh the watchlist.'))
  : ListView(
  children: [
  for (final sym in _watchlist)

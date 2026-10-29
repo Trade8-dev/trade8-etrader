@@ -4,7 +4,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 // Order pad (A1.3): symbol typeahead, side/qty/price steppers honoring
-// tick-rule bands (0.01 under $5, 0.05 above — Reg-NMS parity),
+// tick-rule bands (0.01 under $5, 0.05 above - Reg-NMS parity),
 // destination/TIF/flags → POST /proxy/trade8/v1/orders. Idempotent on
 // client_order_id; pre-submit risk preview lands with the Risk read.
 
@@ -24,7 +24,7 @@ class _OrderPadPageState extends State<OrderPadPage> {
  final _qty = TextEditingController(text: '100');
  final _price = TextEditingController(text: '');
  bool _buy = true;
- String _tif = '0'; // day — the TIF wire codes
+ String _tif = '0'; // day  -  the TIF wire codes
  String? _error;
  String? _ok;
 

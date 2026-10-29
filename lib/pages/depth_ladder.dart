@@ -4,7 +4,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 // Depth ladder (A1.6): 10-level book with click-to-trade pre-fill (taps
-// hand the price to the order pad via the shared symbol/price channel —
+// hand the price to the order pad via the shared symbol/price channel  - 
 // the ValueNotifier below is the app-internal wiring).
 
 import 'package:flutter/material.dart';
@@ -39,7 +39,7 @@ class _DepthLadderPageState extends State<DepthLadderPage> {
  }
 
  String _fmt(dynamic level) {
- if (level is! List || level.isEmpty) return '—';
+ if (level is! List || level.isEmpty) return ' - ';
  final raw = level[0];
  final qty = level.length > 1 ? level[1] : 0;
  final px = (raw is int) ? (raw / 10000).toStringAsFixed(2) : raw.toString;

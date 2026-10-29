@@ -6,7 +6,7 @@
 // BFF client wiring (etrader surfaces): transport + scope map + SSE
 // subscription surface + quote/blotter/P&L caches the pages consume.
 //
-// All backend access routes through Sentin8:BFF /proxy/trade8/... —
+// All backend access routes through Sentin8:BFF /proxy/trade8/...  - 
 // no direct service calls (BFF pattern, architecture-principles §4.7).
 // The concrete HTTP/SSE transport comes from `sdk/flutter/sentin8_flutter`'s
 // Bff8ApiClient once the app bootstrap lands; this module wraps it with
@@ -83,7 +83,7 @@ class OrderRow {
  state == 'accepted' || state == 'routed' || state == 'partially_filled';
 }
 
-/// Quote snapshot (Feed QuoteUpdate shape — scaled prices).
+/// Quote snapshot (Feed QuoteUpdate shape - scaled prices).
 class Quote {
  final String symbol;
  final int bidRaw;

@@ -4,7 +4,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 // Charts indicators + overlays (A1.9): pure-Dart SMA/EMA/Bollinger/CCI
-// over the candle series (no external package — the renderer owns its
+// over the candle series (no external package - the renderer owns its
 // math), plus overlay painters for order-price lines, fill markers,
 // position shading, trendline/hline basics.
 //
@@ -17,9 +17,9 @@ import 'package:flutter/material.dart';
 
 import 'chart.dart';
 
-// ---------------------------------------------------------------------------
+// ------------------------------------------------------------------------
 // Indicator math (pure functions over the close series)
-// ---------------------------------------------------------------------------
+// ------------------------------------------------------------------------
 
 /// Simple moving average.
 List<double> sma(List<double> values, int period) {
@@ -67,7 +67,7 @@ List<double> ema(List<double> values, int period) {
  return (upper: upper, middle: middle, lower: lower);
 }
 
-/// CCI (Commodity Channel Index) — typical price vs its SMA.
+/// CCI (Commodity Channel Index) - typical price vs its SMA.
 List<double> cci(List<Candle> candles, int period) {
  final tp = candles
  .map((c) => ((c.high + c.low + c.close) / 3.0) / 10000.0)
@@ -85,9 +85,9 @@ List<double> cci(List<Candle> candles, int period) {
  return out;
 }
 
-// ---------------------------------------------------------------------------
+// ------------------------------------------------------------------------
 // Overlay painters
-// ---------------------------------------------------------------------------
+// ------------------------------------------------------------------------
 
 /// One overlay line (indicator output or price level).
 class OverlayLine {
@@ -98,7 +98,7 @@ class OverlayLine {
  const OverlayLine(this.values, this.color, {this.width = 1.0, this.yScale = 10000.0});
 }
 
-/// Indicators + overlays painter — draws above the candles.
+/// Indicators + overlays painter - draws above the candles.
 class OverlayPainter extends CustomPainter {
  final List<Candle> candles;
  final List<OverlayLine> lines;
@@ -144,7 +144,7 @@ class TradeOverlayPainter extends CustomPainter {
  final List<Candle> candles;
  /// Fill markers: (candleIndex, priceRaw, isBuy).
  final List<(int, int, bool)> fills;
- /// Order price lines (raw) — limit levels rendered as horizontal dashes.
+ /// Order price lines (raw) - limit levels rendered as horizontal dashes.
  final List<int> priceLines;
  /// Position shading: (fromCandle, toCandle) long/short band.
  final (int, int, bool)? positionBand;

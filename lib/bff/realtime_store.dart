@@ -59,7 +59,7 @@ class RealtimeStore {
  _subs.add(sub);
  }
 
- /// Snapshot refetch helper — call after a gap or on cold start.
+ /// Snapshot refetch helper - call after a gap or on cold start.
  Future<void> refetch(Future<void> Function fetcher) async {
  _setState(RealtimeState.resyncing);
  await fetcher;

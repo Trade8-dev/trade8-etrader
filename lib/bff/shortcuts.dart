@@ -21,21 +21,21 @@ class ShortcutBinding {
  const ShortcutBinding(this.action, this.key, this.label);
 }
 
-/// Default bindings (the desktop terminal parity — F-key commit chain).
+/// Default bindings (the desktop terminal parity - F-key commit chain).
 const Map<String, ShortcutBinding> kDefaultShortcuts = {
- 'buy_limit': ShortcutBinding('buy_limit', LogicalKeyboardKey.keyF1, 'F1 — Buy limit'),
- 'sell_limit': ShortcutBinding('sell_limit', LogicalKeyboardKey.keyF2, 'F2 — Sell limit'),
- 'buy_market': ShortcutBinding('buy_market', LogicalKeyboardKey.keyF3, 'F3 — Buy market'),
- 'sell_market': ShortcutBinding('sell_market', LogicalKeyboardKey.keyF4, 'F4 — Sell market'),
- 'cancel_all': ShortcutBinding('cancel_all', LogicalKeyboardKey.keyF5, 'F5 — Cancel all working'),
- 'flatten': ShortcutBinding('flatten', LogicalKeyboardKey.keyF6, 'F6 — Flatten position'),
- 'refresh_blotter': ShortcutBinding('refresh_blotter', LogicalKeyboardKey.f9, 'F9 — Refresh blotter'),
- 'focus_ticket': ShortcutBinding('focus_ticket', LogicalKeyboardKey.f10, 'F10 — Focus ticket'),
+ 'buy_limit': ShortcutBinding('buy_limit', LogicalKeyboardKey.keyF1, 'F1 - Buy limit'),
+ 'sell_limit': ShortcutBinding('sell_limit', LogicalKeyboardKey.keyF2, 'F2 - Sell limit'),
+ 'buy_market': ShortcutBinding('buy_market', LogicalKeyboardKey.keyF3, 'F3 - Buy market'),
+ 'sell_market': ShortcutBinding('sell_market', LogicalKeyboardKey.keyF4, 'F4 - Sell market'),
+ 'cancel_all': ShortcutBinding('cancel_all', LogicalKeyboardKey.keyF5, 'F5 - Cancel all working'),
+ 'flatten': ShortcutBinding('flatten', LogicalKeyboardKey.keyF6, 'F6 - Flatten position'),
+ 'refresh_blotter': ShortcutBinding('refresh_blotter', LogicalKeyboardKey.f9, 'F9 - Refresh blotter'),
+ 'focus_ticket': ShortcutBinding('focus_ticket', LogicalKeyboardKey.f10, 'F10 - Focus ticket'),
 };
 
 /// The shortcut registry: holds the active binding map, applies edits,
 /// and serializes to/from trader_profile.tool_preferences (the sync
-/// write lands with the profile API — the shape is fixed here).
+/// write lands with the profile API - the shape is fixed here).
 class ShortcutMap {
  Map<String, LogicalKeyboardKey> bindings;
 

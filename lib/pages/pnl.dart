@@ -39,7 +39,7 @@ class _PnlPageState extends State<PnlPage> {
  }
 
  String _money(dynamic raw) {
- if (raw is! int) return '—';
+ if (raw is! int) return ' - ';
  final v = raw / 10000;
  return v.toStringAsFixed(2);
  }

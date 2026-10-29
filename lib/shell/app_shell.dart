@@ -3,7 +3,7 @@
 // SPDX-FileCopyrightText: Copyright Contributors to the Trade8:ETrader
 // SPDX-License-Identifier: Apache-2.0
 
-// App shell — navigation across the eTrader surfaces: order pad,
+// App shell - navigation across the eTrader surfaces: order pad,
 // blotter, depth ladder, tape, P&L, alerts. The BFF client scope wraps
 // the tree; the sentin8_flutter bootstrap injects the authenticated
 // transport (scope-gated: traders see order/pnl pages, managers the

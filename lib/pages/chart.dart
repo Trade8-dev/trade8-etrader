@@ -4,7 +4,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 // Charts core (A1.8): CustomPaint candlestick renderer over the Bars
-// API with interval switcher (1s–1D) + live intrabar updates.
+// API with interval switcher (1s - 1D) + live intrabar updates.
 //
 // 
 // apps design §2: CustomPaint renderer, no chart library, bars from
@@ -25,7 +25,7 @@ class Candle {
  bool get up => close >= open;
 }
 
-/// Candlestick painter — the pure renderer.
+/// Candlestick painter - the pure renderer.
 class CandlePainter extends CustomPainter {
  final List<Candle> candles;
  final int scale; // price scale divisor for display
